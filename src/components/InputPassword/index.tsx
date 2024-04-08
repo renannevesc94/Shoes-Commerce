@@ -16,7 +16,7 @@ export const InputPassword = forwardRef<HTMLInputElement, InputPasswordProps>(
           ref={ref}
           type={showPassword ? "text" : "password"}
           placeholder={isInputFocused ? "" : label}
-          className={`rounded-lg border-2 border-gray-100 w-full h-12 focus:outline-none pl-2 ${
+          className={`rounded-lg border-2 border-gray-100 w-full h-14 focus:outline-none pl-2  ${
             isInputFocused ? "pt-2" : ""
           }`}
           onFocus={() => {
@@ -31,7 +31,8 @@ export const InputPassword = forwardRef<HTMLInputElement, InputPasswordProps>(
         )}
 
         <button
-          className="absolute top-1 right-2 text-xs text-gray-500 w-8 h-8"
+          type="button"
+          className="absolute top-4 right-3 text-xs text-gray-500 w-6 h-6"
           onClick={() => {
             setShowPassword(!showPassword);
           }}

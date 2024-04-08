@@ -14,7 +14,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           placeholder={isInputFocused ? "" : label}
           {...props}
           ref={ref}
-          className={`rounded-lg border-2 border-gray-100 w-full h-12 focus:outline-none pl-2 ${
+          className={`rounded-lg border-2 border-gray-100 w-full h-14 focus:outline-none pl-2 ${
             isInputFocused ? "pt-2" : ""
           }`}
           onFocus={() => {

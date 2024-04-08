@@ -46,12 +46,12 @@ export const InstagramIcon = () => {
         gradientTransform="matrix(1 0 0 -1 0 64)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#efdcb1"></stop>
-        <stop offset="0" stop-color="#f2e0bb"></stop>
-        <stop offset=".011" stop-color="#f2e0bc"></stop>
-        <stop offset=".362" stop-color="#f9edd2"></stop>
-        <stop offset=".699" stop-color="#fef4df"></stop>
-        <stop offset="1" stop-color="#fff7e4"></stop>
+        <stop offset="0" stopColor="#efdcb1"></stop>
+        <stop offset="0" stopColor="#f2e0bb"></stop>
+        <stop offset=".011" stopColor="#f2e0bc"></stop>
+        <stop offset=".362" stopColor="#f9edd2"></stop>
+        <stop offset=".699" stopColor="#fef4df"></stop>
+        <stop offset="1" stopColor="#fff7e4"></stop>
       </radialGradient>
       <path
         fill="url(#TGwjmZMm2W~B4yrgup6jda_119026_gr1)"
@@ -65,17 +65,17 @@ export const InstagramIcon = () => {
         gradientTransform="matrix(.6435 -.7654 .5056 .4251 -26.92 52.282)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".073" stop-color="#eacc7b"></stop>
-        <stop offset=".184" stop-color="#ecaa59"></stop>
-        <stop offset=".307" stop-color="#ef802e"></stop>
-        <stop offset=".358" stop-color="#ef6d3a"></stop>
-        <stop offset=".46" stop-color="#f04b50"></stop>
-        <stop offset=".516" stop-color="#f03e58"></stop>
-        <stop offset=".689" stop-color="#db359e"></stop>
-        <stop offset=".724" stop-color="#ce37a4"></stop>
-        <stop offset=".789" stop-color="#ac3cb4"></stop>
-        <stop offset=".877" stop-color="#7544cf"></stop>
-        <stop offset=".98" stop-color="#2b4ff2"></stop>
+        <stop offset=".073" stopColor="#eacc7b"></stop>
+        <stop offset=".184" stopColor="#ecaa59"></stop>
+        <stop offset=".307" stopColor="#ef802e"></stop>
+        <stop offset=".358" stopColor="#ef6d3a"></stop>
+        <stop offset=".46" stopColor="#f04b50"></stop>
+        <stop offset=".516" stopColor="#f03e58"></stop>
+        <stop offset=".689" stopColor="#db359e"></stop>
+        <stop offset=".724" stopColor="#ce37a4"></stop>
+        <stop offset=".789" stopColor="#ac3cb4"></stop>
+        <stop offset=".877" stopColor="#7544cf"></stop>
+        <stop offset=".98" stopColor="#2b4ff2"></stop>
       </radialGradient>
       <path
         fill="url(#TGwjmZMm2W~B4yrgup6jdb_119026_gr2)"
@@ -110,6 +110,22 @@ export const OpenedEyes = () => {
         clipRule="evenodd"
         d="M11.9745 5C11.9256 5 11.8768 5.00037 11.8279 5.00112C11.7791 5.00037 11.7303 5 11.6814 5V5.00447C8.46079 5.10272 5.3423 6.81985 2.39775 9.98798C1.86741 10.5586 1.86742 11.4414 2.39776 12.012C5.34233 15.1801 8.46116 16.8973 11.6814 16.9955V17C11.7303 17 11.7791 16.9996 11.8279 16.9989C11.8768 16.9996 11.9256 17 11.9745 17V16.9955C15.1947 16.8973 18.3136 15.1801 21.2581 12.012C21.7885 11.4414 21.7885 10.5586 21.2581 9.98798C18.3136 6.81985 15.1951 5.10272 11.9745 5.00447V5ZM8.48455 7.80557C7.08391 8.45091 5.6509 9.49847 4.19454 11C5.65082 12.5014 7.08384 13.5489 8.48442 14.1943C7.71746 13.3507 7.25 12.2299 7.25 11C7.25 9.76999 7.71752 8.64918 8.48455 7.80557ZM15.7635 13.8984C16.975 13.2457 18.2096 12.2905 19.4614 11C18.2095 9.70935 16.975 8.7541 15.7634 8.10141C16.382 8.90344 16.75 9.90875 16.75 11C16.75 12.0912 16.3821 13.0964 15.7635 13.8984ZM8.75 11C8.75 9.20507 10.2051 7.75 12 7.75C13.7949 7.75 15.25 9.20507 15.25 11C15.25 12.7949 13.7949 14.25 12 14.25C10.2051 14.25 8.75 12.7949 8.75 11Z"
       ></path>
+    </svg>
+  );
+};
+
+export const LoadingIcon = () => {
+  return (
+    <svg width="34" height="34" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <style>
+        {`.spinner_S1WN { animation: spinner_MGfb .8s linear infinite; animation-delay: -.8s; fill:#f9f9f9; }
+        .spinner_Km9P { animation-delay: -.65s; fill:#f9f9f9; }
+        .spinner_JApP { animation-delay: -.5s; fill:#f9f9f9; }
+        @keyframes spinner_MGfb { 93.75%, 100% { opacity: .2; } }`}
+      </style>
+      <circle className="spinner_S1WN" cx="4" cy="12" r="3" />
+      <circle className="spinner_S1WN spinner_Km9P" cx="12" cy="12" r="3" />
+      <circle className="spinner_S1WN spinner_JApP" cx="20" cy="12" r="3" />
     </svg>
   );
 };
