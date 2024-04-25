@@ -13,13 +13,12 @@ export const routers = createBrowserRouter([
         element: <Auth />,
       },
       {
-        element: <ProtectedRouter />,
-        children: [
-          {
-            path: "/home",
-            element: <Home />,
-          },
-        ],
+        path: "/home",
+        element: (
+          <ProtectedRouter>
+            <Home />
+          </ProtectedRouter>
+        ),
       },
     ],
   },
