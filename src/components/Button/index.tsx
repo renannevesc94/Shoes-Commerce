@@ -7,10 +7,11 @@ type ButtonProps = {
 } & ComponentPropsWithoutRef<"button">;
 
 export const Button = ({ children, variant, isLoading, ...props }: ButtonProps) => {
-  const primary = "bg-primary text-whitep";
+  const primary = "bg-primary text-whiteDefault";
   const outline = "";
   return (
     <button
+      data-cy="button-login"
       className={`${
         variant === "primary" ? primary : outline
       } h-11 rounded-3xl flex justify-center items-center`}

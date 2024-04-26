@@ -7,16 +7,16 @@ export const FormLogin = () => {
   return (
     <>
       <div className="error flex flex-col flex-wrap w-full justify-center  text-red-400 text-sm text-center">
-        <span>{errors.email ? errors.email.message : ""}</span>
-        <span>{errors.password ? errors.password.message : ""}</span>
+        <span data-cy="error-email">{errors.email ? errors.email.message : ""}</span>
+        <span data-cy="error-password">{errors.password ? errors.password.message : ""}</span>
         <span>{isError ? "Credenciais inválidas" : ""}</span>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col gap-4">
-          <Input label="E-mail" {...register("email")} />
-          <InputPassword label="Password" {...register("password")} />
+          <Input label="E-mail" {...register("email")} data-cy="input-email" />
+          <InputPassword label="Password" {...register("password")} data-cy="input-password" />
 
-          <Button isLoading={isPending} variant="primary">
+          <Button isLoading={isPending} variant="primary" data-cy="submit">
             Login
           </Button>
         </div>

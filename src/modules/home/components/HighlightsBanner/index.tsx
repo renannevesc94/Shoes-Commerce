@@ -1,16 +1,31 @@
 type HighlightBannerProps = {
-  title: string;
-  message: string;
+  content: { title: string; message: string };
+  backgroundColor: "default" | "primary" | "secondary";
 };
 
-export const HighlightBanner = ({ props }: { props: HighlightBannerProps }) => {
+export const HighlightBanner = ({ content, backgroundColor }: HighlightBannerProps) => {
+  const { title, message } = content;
+
+  const getBackgroundColor = () => {
+    switch (backgroundColor) {
+      case "primary":
+        return "bg-gradient-to-br from-sky-800 to-violet-800";
+
+      case "secondary":
+        return "bg-gradient-to-br from-sky-800 to-cyan-500";
+
+      default:
+        return "bg-gradient-to-br from-rose-900 to-red-500";
+    }
+  };
+
   return (
-    <div className=" flex items-center justify-center w-full h-1/6 mt-2 ">
-      <div className="w-11/12 h-full p-2.5 flex bg-gradient-to-br from-blue-500 to-blue-300 rounded-lg">
-        <div className="w-4/6  pl-2 text-whitep flex flex-col gap-2">
-          <h2 className="font-semibold  text-2xl">{props.title}</h2>
-          <p className="font-semibold">{props.message}</p>
-          <button className="bg-whitep w-3/5 h-2/4 rounded-lg font-semibold text-orange-700">
+    <section className="flex items-center justify-center w-full h-1/6 mt-2 ">
+      <div className={`w-11/12 h-full p-2.5 flex rounded-lg ${getBackgroundColor()}`}>
+        <div className="w-4/6  pl-2 text-whiteDefault flex flex-col gap-2">
+          <h2 className="font-semibold  text-2xl">{title}</h2>
+          <p className="font-semibold">{message}</p>
+          <button className="bg-whiteDefault w-3/5 h-2/4 rounded-lg font-semibold text-orange-700">
             Conferir
           </button>
         </div>
@@ -18,6 +33,6 @@ export const HighlightBanner = ({ props }: { props: HighlightBannerProps }) => {
           <img src="./tenis.jpeg" className="w-full h-auto rounded-xl" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };

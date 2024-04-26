@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         primary: "#db3022",
-        whitep: "#f9f9f9",
+        whiteDefault: "#f9f9f9",
       },
     },
   },

@@ -4,7 +4,7 @@ import { FormLogin } from "./components/FormLogin";
 
 export const Auth = () => {
   return (
-    <div className="grid grid-rows-3 h-screen w-screen bg-whitep ">
+    <div className="grid grid-rows-3 h-screen w-screen bg-whiteDefault ">
       <div className="flex items-center w-full p-3 ">
         <h1 className="font-bold text-4xl">Login</h1>
       </div>
