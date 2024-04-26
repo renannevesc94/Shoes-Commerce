@@ -1,7 +1,7 @@
 import Hamburger from "hamburger-react";
 import { useState } from "react";
 import { IconUser } from "../Icons";
-import { ItemMenuLi } from "../ItensMenuLi";
+import { ItemsMenuLi } from "../index";
 import { useProtected } from "../ProtectedRouter/hooks/use-protected";
 import { useAuth } from "../../providers/AuthProvider";
 
@@ -26,10 +26,10 @@ export const NavMobile = () => {
             )}
           </div>
           <ul className="grid gap-2">
-            <ItemMenuLi isMobile={true}>Feminino</ItemMenuLi>
-            <ItemMenuLi isMobile={true}>Masculino</ItemMenuLi>
-            <ItemMenuLi isMobile={true}>Infantil</ItemMenuLi>
-            <ItemMenuLi isMobile={true}>Promoções</ItemMenuLi>
+            <ItemsMenuLi isMobile={true}>Feminino</ItemsMenuLi>
+            <ItemsMenuLi isMobile={true}>Masculino</ItemsMenuLi>
+            <ItemsMenuLi isMobile={true}>Infantil</ItemsMenuLi>
+            <ItemsMenuLi isMobile={true}>Promoções</ItemsMenuLi>
           </ul>
         </div>
       )}

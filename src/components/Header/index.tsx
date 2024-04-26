@@ -1,4 +1,4 @@
-import { ItemMenuLi } from "../ItensMenuLi";
+import { ItemMenuLi } from "../ItemsMenuLi";
 import { NavMobile } from "../NavMobile";
 import { ShoppingCart } from "../ShoppingCart";
 

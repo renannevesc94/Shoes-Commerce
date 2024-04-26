@@ -1,10 +1,10 @@
 import { IconArrow } from "../Icons";
 
-type ItemMenuLiprops = {
+type ItemsMenuLiprops = {
   children: React.ReactNode;
   isMobile: boolean;
 };
-export const ItemMenuLi = ({ children, isMobile }: ItemMenuLiprops) => {
+export const ItemsMenuLi = ({ children, isMobile }: ItemsMenuLiprops) => {
   return isMobile ? (
     <li className="w-full shadow-md h-10 flex items-center p-2 pr-4 justify-between">
       <span className="flex gap-1 text-lg font-light from-neutral-600">{children}</span>
