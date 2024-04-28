@@ -1,22 +1,36 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css/navigation";
+6;
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 
 type MenuCarouselProps = {
   HighlightBanners: React.ReactNode[];
+  slidesPerView: number;
+  navigation: boolean;
+  autoPlay: boolean;
+  autoplayConfig?: {
+    delay: number;
+    disableOnInteraction: boolean;
+  };
 };
 
-export const MenuCarousel = ({ HighlightBanners }: MenuCarouselProps) => {
+export const MenuCarousel = ({
+  HighlightBanners,
+  slidesPerView,
+  autoPlay,
+  navigation,
+  autoplayConfig,
+}: MenuCarouselProps) => {
   return (
     <Swiper
       pagination={true}
-      modules={[Pagination, Autoplay]}
-      autoplay={{
-        delay: 3500,
-        disableOnInteraction: false,
-      }}
-      className="mySwiper"
+      navigation={navigation}
+      slidesPerView={slidesPerView}
+      modules={[Pagination, Autoplay, Navigation]}
+      autoplay={autoPlay ? autoplayConfig : false}
+      className="menuCarousel"
     >
       {HighlightBanners.map((el, index) => {
         return <SwiperSlide key={index}>{el}</SwiperSlide>;

@@ -20,8 +20,8 @@ export const HighlightBanner = ({ content, backgroundColor }: HighlightBannerPro
   };
 
   return (
-    <section className="flex items-center justify-center w-full h-1/6 mt-2 ">
-      <div className={`w-11/12 h-full p-2.5 flex rounded-lg ${getBackgroundColor()}`}>
+    <section className="flex items-center justify-center w-full h-1/6 p-1">
+      <div className={`w-full h-full p-2.5 flex rounded-lg ${getBackgroundColor()}`}>
         <div className="w-4/6  pl-2 text-whiteDefault flex flex-col gap-2">
           <h2 className="font-semibold  text-2xl">{title}</h2>
           <p className="font-semibold">{message}</p>
