@@ -1,25 +1,25 @@
 import { Button } from "../Button";
-import { IconStar } from "../Icons";
+import { RatingStar } from "../RatingStar";
 
-export const ProductCard = () => {
+type ProductCardProps = {
+  price: string;
+  title: string;
+  rating: number;
+  urlImage: string;
+};
+
+export const ProductCard = ({ price, title, rating, urlImage }: ProductCardProps) => {
   return (
     <section className="border-2 shadow-md w-48 h-64 flex flex-col items-center p-1 rounded-lg">
       <div className="w-full h-3/5 bg-slate-300 rounded-lg">
-        <img src="./tenis-card.png" alt="" className="w-full h-full" />
+        <img src={`./shoes/${urlImage}`} alt="" className="w-full h-full" />
       </div>
       <div className="flex justify-between w-full">
-        <span className="flex">
-          {" "}
-          <IconStar strokeColor={"#ffff00"} fillColor={" #ffff00"} />
-          <IconStar strokeColor={"#ffff00"} fillColor={" #ffff00"} />
-          <IconStar strokeColor={"#ffff00"} fillColor={" #ffff00"} />
-          <IconStar strokeColor={"#ffff00"} fillColor={" #ffff00"} />
-          <IconStar strokeColor={"#ffff00"} fillColor={" #ffff00"} />
-        </span>
-        <span className="font-semibold text-gray-900">R$ 1.258,80</span>
+        <RatingStar rating={rating} />
+        <span className="font-semibold text-gray-900">{`R$ ${price}`}</span>
       </div>
       <div className="mt-1 font-bold w-full flex justify-center items-center">
-        <h2>Nike Air Force 1 '07</h2>
+        <h2>{title}</h2>
       </div>
       <div className="flex w-full h-10 items-center justify-center mt-2">
         <Button variant="primary" isFull={true}>
