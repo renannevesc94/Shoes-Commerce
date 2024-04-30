@@ -1,6 +1,7 @@
 import { MenuCarousel, Header } from "../../components";
 import { ProductCard } from "../../components/ProductCard";
 import { HighlightBanner } from "./components/HighlightsBanner";
+import { NewsletterForm } from "./components/NewsletterForm";
 
 const highlightBanners = [
   {
@@ -47,6 +48,33 @@ const dataTenis = [
   },
 ];
 
+const dataTenis2 = [
+  {
+    title: "Tênis da Nike",
+    price: "500,00",
+    rating: 5,
+    urlImage: "tenis-card5.png",
+  },
+  {
+    title: "Tênis da Adidas",
+    price: "399,20",
+    rating: 4,
+    urlImage: "tenis-card6.png",
+  },
+  {
+    title: "Tênis da Puma",
+    price: "778,99",
+    rating: 4,
+    urlImage: "tenis-card7.png",
+  },
+  {
+    title: "Tênis da New Balance",
+    price: "1199,00",
+    rating: 3,
+    urlImage: "tenis-card8.png",
+  },
+];
+
 export const Home = () => {
   function isHighlightColor(color: string): color is "default" | "primary" | "secondary" {
     return ["default", "primary", "secondary"].includes(color);
@@ -62,73 +90,65 @@ export const Home = () => {
   });
 
   return (
-    <div className="w-screen h-screen">
+    <>
       <Header />
-      <MenuCarousel
-        autoPlay={true}
-        navigation={false}
-        autoplayConfig={{ delay: 3500, disableOnInteraction: false }}
-        HighlightBanners={banners}
-        slidesPerView={1}
-      />
-      <section className="flex items-center justify-center w-full mt-6 flex-wrap">
-        <h2 className="w-full pl-4 font-extrabold text-center text-lg">Novidades</h2>
-        <MenuCarousel
-          autoPlay={false}
-          navigation={true}
-          slidesPerView={2}
-          HighlightBanners={dataTenis.map(el => {
-            return (
-              <ProductCard
-                price={el.price}
-                rating={el.rating}
-                title={el.title}
-                urlImage={el.urlImage}
-              />
-            );
-          })}
-        />
-      </section>
 
-      <section className="flex items-center justify-center w-full mt-6 flex-wrap">
-        <h2 className="w-full pl-4 font-extrabold text-center text-lg">Lançamentos</h2>
-        <MenuCarousel
-          autoPlay={false}
-          navigation={true}
-          slidesPerView={2}
-          HighlightBanners={dataTenis.map(el => {
-            return (
-              <ProductCard
-                price={el.price}
-                rating={el.rating}
-                title={el.title}
-                urlImage={el.urlImage}
-              />
-            );
-          })}
-        />
-      </section>
-    </div>
+      <main className="w-screen h-screen">
+        <section>
+          <MenuCarousel
+            autoPlay={true}
+            navigation={false}
+            pagination={true}
+            autoplayConfig={{ delay: 3500, disableOnInteraction: false }}
+            contentSwiper={banners}
+            slidesPerView={1}
+          />
+        </section>
+
+        <section className="flex items-center justify-center w-full mt-6 flex-wrap">
+          <h2 className="w-full pl-4 font-extrabold text-center text-2xl">Novidades</h2>
+          <MenuCarousel
+            autoPlay={false}
+            navigation={true}
+            pagination={false}
+            slidesPerView={2}
+            contentSwiper={dataTenis2.map(el => {
+              return (
+                <ProductCard
+                  price={el.price}
+                  rating={el.rating}
+                  title={el.title}
+                  urlImage={el.urlImage}
+                />
+              );
+            })}
+          />
+        </section>
+
+        <section className="flex items-center justify-center w-full mt-6 flex-wrap">
+          <h2 className="w-full pl-4 font-extrabold text-center text-2xl">Lançamentos</h2>
+          <MenuCarousel
+            autoPlay={false}
+            navigation={true}
+            pagination={false}
+            slidesPerView={2}
+            contentSwiper={dataTenis.map(el => {
+              return (
+                <ProductCard
+                  price={el.price}
+                  rating={el.rating}
+                  title={el.title}
+                  urlImage={el.urlImage}
+                />
+              );
+            })}
+          />
+        </section>
+
+        <section className="p-2 m-2 bg-slate-200 rounded-xl mt-10">
+          <NewsletterForm />
+        </section>
+      </main>
+    </>
   );
 };
-
-/* [
-  <ProductCard
-    price="125,50"
-    rating={5}
-    title="Tenis da Nike"
-    urlImage="tenis-card.png"
-  />,
-  <ProductCard
-    price="125,50"
-    rating={3}
-    title="Tenis da Nike"
-    urlImage="tenis-card2.png"
-  />,
-  <ProductCard
-    price="125,50"
-    rating={4}
-    title="Tenis da Nike"
-    urlImage="tenis-card3.png"
-  />,
-] */
