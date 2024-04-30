@@ -19,8 +19,8 @@ const users = [
   },
 ];
 
-export const AuthHandle = [
-  http.post<AuthParams, AuthApiRequest, AuthApiResponse>("auth", async ({ request }) => {
+export const handlers = [
+  http.post<AuthParams, AuthApiRequest, AuthApiResponse>("/auth", async ({ request }) => {
     await delay(1200);
     const dataAuth = await request.json();
     const user = users.find(user => {
