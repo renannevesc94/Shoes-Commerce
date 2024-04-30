@@ -11,8 +11,6 @@ export const Home = () => {
   const { data: novelties } = useGetNovelties();
   const { data: highlightBanners } = useGetHighLights();
 
-  console.log(releases);
-
   function isHighlightColor(color: string): color is "default" | "primary" | "secondary" {
     return ["default", "primary", "secondary"].includes(color);
   }
@@ -29,7 +27,6 @@ export const Home = () => {
   return (
     <>
       <Header />
-
       <main className="w-screen h-screen">
         <section>
           <MenuCarousel
@@ -68,7 +65,6 @@ export const Home = () => {
 
         <section className="flex items-center justify-center w-full mt-6 flex-wrap">
           <h2 className="w-full pl-4 font-extrabold text-center text-2xl">Lançamentos</h2>
-
           <MenuCarousel
             autoPlay={false}
             navigation={true}
