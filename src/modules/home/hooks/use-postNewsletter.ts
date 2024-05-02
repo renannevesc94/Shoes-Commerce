@@ -6,7 +6,7 @@ export const usePostNewsletter = () => {
   const {
     register,
     handleSubmit,
-    control,
+
     formState: { errors },
   } = useForm<NewsletterType>({
     resolver: zodResolver(newsletterSchema),
@@ -16,5 +16,5 @@ export const usePostNewsletter = () => {
     console.log(data);
   };
 
-  return { register, handleSubmit: handleSubmit(onSubmit), errors, control };
+  return { register, handleSubmit: handleSubmit(onSubmit), errors };
 };
