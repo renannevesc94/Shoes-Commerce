@@ -1,22 +1,28 @@
 import { Button, Input } from "../../../../components";
-import { usePostNewsletter } from "../../hooks/use-postNewsletter";
+import { Modal } from "../../../../components/Modal";
+import { useNewsletter } from "../../hooks/use-Newsletter";
 import { CheckboxWithLabel } from "../CheckboxWithLabel";
 
 export const NewsletterForm = () => {
-  const { register, handleSubmit, errors } = usePostNewsletter();
-  console.log(errors);
+  const { register, handleSubmit, errors, isPending, isSuccess, data: response } = useNewsletter();
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="relative">
       <h2 className="font-bold text-center text-xl">Receba super descontos e ofertas exclusivas</h2>
       <p className="text-center">Cadastre-se em nossa newsletter!</p>
       <div className="flex flex-col gap-3 mt-4">
-        <Input label="Nome" {...register("name")} isError={errors.name ? true : false} />
+        <Input
+          label="Nome"
+          {...register("name")}
+          isError={errors.name ? true : false}
+          disabled={isPending}
+        />
         <Input
           label="Email"
           type="email"
           {...register("email")}
           isError={errors.email ? true : false}
+          disabled={isPending}
         />
       </div>
 
@@ -57,11 +63,12 @@ export const NewsletterForm = () => {
           </span>
         )}
       </div>
-      <div className="h-12">
-        <Button variant="primary" isFull={true}>
+      <div className="h-12 ">
+        <Button variant="primary" isFull={true} isLoading={isPending}>
           Aceitar e cadastrar
         </Button>
       </div>
+      {isSuccess && <Modal title="Cadastro efetuado" information={response?.data?.message} />}
     </form>
   );
 };

@@ -3,38 +3,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
-import { Pagination, Autoplay, Navigation } from "swiper/modules";
+import { Pagination, Autoplay, Navigation, EffectFade } from "swiper/modules";
+import { SwiperOptions } from "swiper/types";
 
-type MenuCarouselProps = {
+interface MenuCarouselProps extends SwiperOptions {
   contentSwiper: React.ReactNode[];
-  slidesPerView: number;
-  navigation: boolean;
-  pagination: boolean;
-  autoPlay: boolean;
-  autoplayConfig?: {
-    delay: number;
-    disableOnInteraction: boolean;
-  };
-};
+}
 
-export const MenuCarousel = ({
-  contentSwiper,
-  slidesPerView,
-  autoPlay,
-  pagination,
-  navigation,
-  autoplayConfig,
-}: MenuCarouselProps) => {
+export const MenuCarousel: React.FC<MenuCarouselProps> = ({ contentSwiper, ...swiperProps }) => {
   return (
     <>
       <Swiper
-        pagination={pagination}
-        navigation={navigation}
-        slidesPerView={slidesPerView}
-        modules={[Pagination, Autoplay, Navigation]}
-        autoplay={autoPlay ? autoplayConfig : false}
+        modules={[Autoplay, Pagination, Navigation, EffectFade]}
         className="menuCarousel"
+        {...swiperProps}
       >
         {contentSwiper.map((el, index) => {
           return <SwiperSlide key={index}>{el}</SwiperSlide>;

@@ -1,5 +1,6 @@
 import { api } from "../clients/api";
 import { AuthType } from "../modules/auth/types";
+import { NewsletterType } from "../modules/home/types";
 
 type novelties = {
   title: string;
@@ -8,7 +9,7 @@ type novelties = {
   urlImage: string;
 };
 
-type highlights = {
+export type highlights = {
   title: string;
   message: string;
   backgroundColor: string;
@@ -28,4 +29,8 @@ export const getNovelties = () => {
 
 export const getHighLights = () => {
   return api.get<highlights[]>("/highlights");
+};
+
+export const postNewsletter = (data: NewsletterType) => {
+  return api.post("/newsletter", data);
 };

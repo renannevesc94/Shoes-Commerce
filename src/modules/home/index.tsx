@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { MenuCarousel, Header } from "../../components";
 import { ProductCard } from "../../components/ProductCard";
 import { HighlightBanner } from "./components/HighlightsBanner";
+import { MakersCarousel } from "./components/MakersCarousel";
 import { NewsletterForm } from "./components/NewsletterForm";
 import { useGetHighLights } from "./hooks/use-getHighLights";
 import { useGetNovelties } from "./hooks/use-getNovelties";
@@ -10,6 +12,15 @@ export const Home = () => {
   const { data: releases } = useGetReleases();
   const { data: novelties } = useGetNovelties();
   const { data: highlightBanners } = useGetHighLights();
+  const makers = [
+    { name: "adidas" },
+    { name: "asics" },
+    { name: "converse" },
+    { name: "nike" },
+    { name: "under" },
+  ];
+
+  useEffect(() => {}, [highlightBanners]);
 
   function isHighlightColor(color: string): color is "default" | "primary" | "secondary" {
     return ["default", "primary", "secondary"].includes(color);
@@ -29,22 +40,23 @@ export const Home = () => {
       <Header />
       <main className="w-screen h-screen">
         <section>
-          <MenuCarousel
-            autoPlay={true}
-            navigation={false}
-            pagination={true}
-            autoplayConfig={{ delay: 3500, disableOnInteraction: false }}
-            contentSwiper={banners ? banners : []}
-            slidesPerView={1}
-          />
+          {banners && (
+            <MenuCarousel
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              pagination={true}
+              contentSwiper={banners}
+              slidesPerView={1}
+            />
+          )}
         </section>
 
         <section className="flex items-center justify-center w-full mt-6 flex-wrap">
-          <h2 className="w-full pl-4 font-extrabold text-center text-2xl">Novidades</h2>
+          <h2 className="w-full font-extrabold text-center text-xl">Novidades</h2>
           <MenuCarousel
-            autoPlay={false}
             navigation={true}
-            pagination={false}
             slidesPerView={2}
             contentSwiper={
               releases
@@ -64,11 +76,9 @@ export const Home = () => {
         </section>
 
         <section className="flex items-center justify-center w-full mt-6 flex-wrap">
-          <h2 className="w-full pl-4 font-extrabold text-center text-2xl">Lançamentos</h2>
+          <h2 className="w-full font-extrabold text-center text-xl">Lançamentos</h2>
           <MenuCarousel
-            autoPlay={false}
             navigation={true}
-            pagination={false}
             slidesPerView={2}
             contentSwiper={
               novelties
@@ -87,6 +97,17 @@ export const Home = () => {
           />
         </section>
 
+        <section className=" mt-4">
+          <h2 className="text-center font-medium text-lg">Trabalhamos com as melhores marcas</h2>
+          <MenuCarousel
+            pagination={true}
+            navigation={false}
+            slidesPerView={1}
+            contentSwiper={makers.map(maker => {
+              return <MakersCarousel maker={maker.name} />;
+            })}
+          />
+        </section>
         <section className="p-2 m-2 bg-slate-200 rounded-xl mt-10">
           <NewsletterForm />
         </section>

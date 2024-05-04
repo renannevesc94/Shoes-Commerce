@@ -1,6 +1,6 @@
 import { HttpResponse, delay, http } from "msw";
 
-export const highlightBannerHandle = [
+export const handlers = [
   http.get("/highlights", async () => {
     await delay(1200);
     return HttpResponse.json(

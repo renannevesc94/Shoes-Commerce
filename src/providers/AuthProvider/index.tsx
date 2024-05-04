@@ -1,33 +1,49 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
 interface AuthContextType {
   login: (token: string) => void;
   logout: () => void;
+  isAuthenticated: boolean;
 }
 
 const AuthContext = createContext<AuthContextType>({
   login: () => {},
   logout: () => {},
+  isAuthenticated: false,
 });
 
 const useAuthBase = () => {
   const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (!token) {
+      setIsAuthenticated(false);
+      return;
+    }
+    console.log("NÃO ERA PRA ESTAR AQUI");
+    setIsAuthenticated(true);
+  }, [isAuthenticated]);
 
   const login = (token: string) => {
     Cookies.set("token", token);
+    setIsAuthenticated(true);
     navigate("/home");
   };
 
   const logout = () => {
     Cookies.remove("token");
+    setIsAuthenticated(false);
     navigate("/auth");
   };
 
   return {
     login,
     logout,
+    isAuthenticated,
   };
 };
 

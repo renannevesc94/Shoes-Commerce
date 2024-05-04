@@ -17,7 +17,6 @@ export const useLogin = () => {
 
   const { mutate, isPending, isError } = usePostAuth({
     onSuccess: ({ data }) => {
-      console.log("sucess ", data);
       login(data.token);
     },
     onError: err => {
