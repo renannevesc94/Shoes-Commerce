@@ -17,7 +17,7 @@ export const NavMobile = () => {
       <Hamburger size={20} toggled={isOpen} toggle={setIsOpen} />
       {isOpen && (
         <div className="fixed left-0 w-4/5 bg-slate-100 shadow-md top-[3.5rem] pt-0 border-2 z-10">
-          <div className="bg-slate-100 w-full h-10 flex items-center p-2 cursor-pointer">
+          <div className="bg-slate-100 w-full h-16 flex items-center p-2 cursor-pointer shadow-md">
             <IconUser />
             {isAuthenticated ? (
               <button className="font-semibold ml-2" onClick={() => logout()}>
