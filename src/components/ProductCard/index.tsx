@@ -10,7 +10,7 @@ type ProductCardProps = {
 
 export const ProductCard = ({ price, title, rating, urlImage }: ProductCardProps) => {
   return (
-    <section className="border-2 shadow-md w-48 h-64 flex flex-col items-center p-1 rounded-lg">
+    <div className="border-2 shadow-md w-48 h-64 flex flex-col items-center p-1 rounded-lg">
       <div className="w-full h-3/5 bg-slate-300 rounded-lg">
         <img src={`./shoes/${urlImage}`} alt="" className="w-full h-full" />
       </div>
@@ -26,6 +26,6 @@ export const ProductCard = ({ price, title, rating, urlImage }: ProductCardProps
           Mostrar detalhes
         </Button>
       </div>
-    </section>
+    </div>
   );
 };

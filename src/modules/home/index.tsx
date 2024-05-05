@@ -1,13 +1,13 @@
-import { useEffect } from "react";
 import { MenuCarousel, Header } from "../../components";
+import { FallbackProductCard } from "../../components/FallbackProductCard";
 import { ProductCard } from "../../components/ProductCard";
+import { FallbackHighlightBanner } from "./components/FallbackHighlightsBanner";
 import { HighlightBanner } from "./components/HighlightsBanner";
 import { MakersCarousel } from "./components/MakersCarousel";
 import { NewsletterForm } from "./components/NewsletterForm";
 import { useGetHighLights } from "./hooks/use-getHighLights";
 import { useGetNovelties } from "./hooks/use-getNovelties";
 import { useGetReleases } from "./hooks/use-getReleases";
-
 export const Home = () => {
   const { data: releases } = useGetReleases();
   const { data: novelties } = useGetNovelties();
@@ -19,8 +19,6 @@ export const Home = () => {
     { name: "nike" },
     { name: "under" },
   ];
-
-  useEffect(() => {}, [highlightBanners]);
 
   function isHighlightColor(color: string): color is "default" | "primary" | "secondary" {
     return ["default", "primary", "secondary"].includes(color);
@@ -40,17 +38,15 @@ export const Home = () => {
       <Header />
       <main className="w-screen h-screen">
         <section>
-          {banners && (
-            <MenuCarousel
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-              }}
-              pagination={true}
-              contentSwiper={banners}
-              slidesPerView={1}
-            />
-          )}
+          <MenuCarousel
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            pagination={true}
+            contentSwiper={banners ? banners : [<FallbackHighlightBanner />]}
+            slidesPerView={1}
+          />
         </section>
 
         <section className="flex items-center justify-center w-full mt-6 flex-wrap">
@@ -70,7 +66,7 @@ export const Home = () => {
                       />
                     );
                   })
-                : []
+                : [<FallbackProductCard />, <FallbackProductCard />]
             }
           />
         </section>
@@ -92,7 +88,7 @@ export const Home = () => {
                       />
                     );
                   })
-                : []
+                : [<FallbackProductCard />, <FallbackProductCard />]
             }
           />
         </section>

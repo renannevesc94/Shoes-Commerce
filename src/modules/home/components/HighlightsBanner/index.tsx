@@ -20,7 +20,7 @@ export const HighlightBanner = ({ content, backgroundColor }: HighlightBannerPro
   };
 
   return (
-    <section className="flex items-center justify-center w-full h-1/6 p-1">
+    <div className="flex items-center justify-center w-full h-1/6 p-1">
       <div className={`w-full h-full p-2.5 flex rounded-lg ${getBackgroundColor()}`}>
         <div className="w-4/6  pl-2 text-whiteDefault flex flex-col gap-2">
           <h2 className="font-semibold  text-2xl">{title}</h2>
@@ -33,6 +33,6 @@ export const HighlightBanner = ({ content, backgroundColor }: HighlightBannerPro
           <img src="./tenis.jpeg" className="w-full h-auto rounded-xl" />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
