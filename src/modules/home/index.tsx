@@ -1,10 +1,11 @@
-import { MenuCarousel, Header } from "../../components";
-import { FallbackProductCard } from "../../components/FallbackProductCard";
-import { ProductCard } from "../../components/ProductCard";
-import { FallbackHighlightBanner } from "./components/FallbackHighlightsBanner";
-import { HighlightBanner } from "./components/HighlightsBanner";
-import { MakersCarousel } from "./components/MakersCarousel";
-import { NewsletterForm } from "./components/NewsletterForm";
+import { MenuCarousel, Header, Footer, ProductCard, FallbackProductCard } from "../../components";
+import {
+  FallbackHighlightBanner,
+  HighlightBanner,
+  MakersCarousel,
+  NewsletterForm,
+} from "./components/index";
+
 import { useGetHighLights } from "./hooks/use-getHighLights";
 import { useGetNovelties } from "./hooks/use-getNovelties";
 import { useGetReleases } from "./hooks/use-getReleases";
@@ -36,7 +37,7 @@ export const Home = () => {
   return (
     <>
       <Header />
-      <main className="w-screen h-screen">
+      <main className="w-screen h-5/6">
         <section>
           <MenuCarousel
             autoplay={{
@@ -108,6 +109,7 @@ export const Home = () => {
           <NewsletterForm />
         </section>
       </main>
+      <Footer />
     </>
   );
 };
