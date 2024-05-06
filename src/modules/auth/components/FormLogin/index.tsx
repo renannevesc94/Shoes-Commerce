@@ -11,7 +11,7 @@ export const FormLogin = () => {
         <span data-cy="error-password">{errors.password ? errors.password.message : ""}</span>
         <span>{isError ? "Credenciais inválidas" : ""}</span>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
         <div className="flex flex-col gap-4">
           <Input label="E-mail" {...register("email")} data-cy="input-email" />
           <InputPassword label="Password" {...register("password")} data-cy="input-password" />
