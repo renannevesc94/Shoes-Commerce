@@ -2,11 +2,11 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
-interface AuthContextType {
+type AuthContextType = {
   login: (token: string) => void;
   logout: () => void;
   isAuthenticated: boolean;
-}
+};
 
 const AuthContext = createContext<AuthContextType>({
   login: () => {},
