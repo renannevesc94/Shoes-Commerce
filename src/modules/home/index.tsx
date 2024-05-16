@@ -1,4 +1,11 @@
-import { MenuCarousel, Header, Footer, ProductCard, FallbackProductCard } from "../../components";
+import {
+  MenuCarousel,
+  Header,
+  Footer,
+  ProductCard,
+  FallbackProductCard,
+} from "../../components";
+import { ProductProvider } from "../../providers/ProductsProvider";
 import {
   FallbackHighlightBanner,
   HighlightBanner,
@@ -21,15 +28,19 @@ export const Home = () => {
     { name: "under" },
   ];
 
-  function isHighlightColor(color: string): color is "default" | "primary" | "secondary" {
+  function isHighlightColor(
+    color: string
+  ): color is "default" | "primary" | "secondary" {
     return ["default", "primary", "secondary"].includes(color);
   }
 
-  const banners = highlightBanners?.map(el => {
+  const banners = highlightBanners?.map((el) => {
     return (
       <HighlightBanner
         content={el}
-        backgroundColor={isHighlightColor(el.backgroundColor) ? el.backgroundColor : "default"}
+        backgroundColor={
+          isHighlightColor(el.backgroundColor) ? el.backgroundColor : "default"
+        }
       />
     );
   });
@@ -51,20 +62,24 @@ export const Home = () => {
         </section>
 
         <section className="flex items-center justify-center w-full mt-6 flex-wrap">
-          <h2 className="w-full font-extrabold text-center text-xl">Novidades</h2>
+          <h2 className="w-full font-extrabold text-center text-xl">
+            Novidades
+          </h2>
           <MenuCarousel
             navigation={true}
             slidesPerView={2}
             contentSwiper={
               releases
-                ? releases.map(el => {
+                ? releases.map((el) => {
                     return (
-                      <ProductCard
-                        price={el.price}
-                        rating={el.rating}
-                        title={el.title}
-                        urlImage={el.urlImage}
-                      />
+                      <ProductProvider product={el}>
+                        <ProductCard
+                          price={el.price}
+                          rating={el.rating}
+                          title={el.title}
+                          urlImage={el.urlImage}
+                        />
+                      </ProductProvider>
                     );
                   })
                 : [<FallbackProductCard />, <FallbackProductCard />]
@@ -73,20 +88,24 @@ export const Home = () => {
         </section>
 
         <section className="flex items-center justify-center w-full mt-6 flex-wrap">
-          <h2 className="w-full font-extrabold text-center text-xl">Lançamentos</h2>
+          <h2 className="w-full font-extrabold text-center text-xl">
+            Lançamentos
+          </h2>
           <MenuCarousel
             navigation={true}
             slidesPerView={2}
             contentSwiper={
               novelties
-                ? novelties.map(el => {
+                ? novelties.map((el) => {
                     return (
-                      <ProductCard
-                        price={el.price}
-                        rating={el.rating}
-                        title={el.title}
-                        urlImage={el.urlImage}
-                      />
+                      <ProductProvider product={el}>
+                        <ProductCard
+                          price={el.price}
+                          rating={el.rating}
+                          title={el.title}
+                          urlImage={el.urlImage}
+                        />
+                      </ProductProvider>
                     );
                   })
                 : [<FallbackProductCard />, <FallbackProductCard />]
@@ -95,12 +114,14 @@ export const Home = () => {
         </section>
 
         <section className=" mt-4">
-          <h2 className="text-center font-medium text-lg">Trabalhamos com as melhores marcas</h2>
+          <h2 className="text-center font-medium text-lg">
+            Trabalhamos com as melhores marcas
+          </h2>
           <MenuCarousel
             pagination={true}
             navigation={false}
             slidesPerView={1}
-            contentSwiper={makers.map(maker => {
+            contentSwiper={makers.map((maker) => {
               return <MakersCarousel maker={maker.name} />;
             })}
           />

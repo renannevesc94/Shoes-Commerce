@@ -1,13 +1,7 @@
 import { api } from "../clients/api";
 import { AuthType } from "../modules/auth/types";
 import { NewsletterType } from "../modules/home/types";
-
-type novelties = {
-  title: string;
-  price: string;
-  rating: number;
-  urlImage: string;
-};
+import { productType } from "../types";
 
 export type highlights = {
   title: string;
@@ -20,11 +14,11 @@ export const apiAuth = (data: AuthType) => {
 };
 
 export const getReleases = () => {
-  return api.get<novelties[]>("/releases");
+  return api.get<productType[]>("/releases");
 };
 
 export const getNovelties = () => {
-  return api.get<novelties[]>("/novelties");
+  return api.get<productType[]>("/novelties");
 };
 
 export const getHighLights = () => {

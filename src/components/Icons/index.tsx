@@ -225,8 +225,8 @@ export const Iconfavorite = ({ fill = "none" }: IconfavoriteProps) => {
     <svg
       fill={fill}
       stroke="black"
-      width="26"
-      height="26"
+      width="24"
+      height="24"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >

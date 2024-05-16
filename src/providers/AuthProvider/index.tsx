@@ -24,7 +24,6 @@ const useAuthBase = () => {
       setIsAuthenticated(false);
       return;
     }
-    console.log("NÃO ERA PRA ESTAR AQUI");
     setIsAuthenticated(true);
   }, [isAuthenticated]);
 
