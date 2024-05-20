@@ -96,11 +96,7 @@ export const InstagramIcon = () => {
 
 export const ClosedEyes = () => {
   return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="M3.85005 10.6503C3.47405 10.2457 2.84131 10.2226 2.43678 10.5986C2.03224 10.9746 2.0091 11.6073 2.38509 12.0119C2.59364 12.2362 2.80306 12.4533 3.01333 12.6631L1.21967 14.4568C0.926777 14.7496 0.926777 15.2245 1.21967 15.5174C1.51256 15.8103 1.98744 15.8103 2.28033 15.5174L4.11214 13.6856C4.99312 14.447 5.88783 15.0812 6.79444 15.5841L5.46281 17.8906C5.25571 18.2493 5.37861 18.708 5.73733 18.9151C6.09605 19.1222 6.55475 18.9993 6.76185 18.6406L8.15098 16.2345C9.16715 16.6459 10.1968 16.8938 11.2374 16.9725L11.2374 19.5C11.2374 19.9142 11.5732 20.25 11.9874 20.25C12.4017 20.25 12.7374 19.9142 12.7374 19.5L12.7374 16.9403C13.7554 16.8266 14.7626 16.5507 15.7565 16.1182L17.2128 18.6406C17.4199 18.9993 17.8786 19.1222 18.2373 18.9151C18.5961 18.708 18.719 18.2493 18.5119 17.8906L17.0951 15.4367C17.9761 14.9224 18.8456 14.2839 19.7019 13.525L21.6944 15.5175C21.9873 15.8104 22.4622 15.8104 22.7551 15.5175C23.048 15.2246 23.048 14.7498 22.7551 14.4569L20.7886 12.4903C20.9413 12.3347 21.0936 12.1752 21.2455 12.0119C21.6215 11.6073 21.5983 10.9746 21.1938 10.5986C20.7892 10.2226 20.1565 10.2457 19.7805 10.6503C17.0244 13.6156 14.3487 14.949 11.8153 14.9984C9.28183 14.949 6.60614 13.6156 3.85005 10.6503Z"></path>
     </svg>
   );
@@ -108,11 +104,7 @@ export const ClosedEyes = () => {
 
 export const OpenedEyes = () => {
   return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -124,12 +116,7 @@ export const OpenedEyes = () => {
 
 export const LoadingIcon = () => {
   return (
-    <svg
-      width="34"
-      height="34"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width="34" height="34" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <style>
         {`.spinner_S1WN { animation: spinner_MGfb .8s linear infinite; animation-delay: -.8s; fill:#f9f9f9; }
         .spinner_Km9P { animation-delay: -.65s; fill:#f9f9f9; }
@@ -145,11 +132,7 @@ export const LoadingIcon = () => {
 
 export const IconUser = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 448 512"
-      className="w-5 h-5"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="w-5 h-5">
       <path
         d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"
         fill="currentColor"
@@ -220,13 +203,13 @@ export const IconClose = () => {
 type IconfavoriteProps = {
   fill?: string;
 };
-export const Iconfavorite = ({ fill = "none" }: IconfavoriteProps) => {
+export const Iconfavorite = ({ fill = 'none' }: IconfavoriteProps) => {
   return (
     <svg
       fill={fill}
       stroke="black"
-      width="24"
-      height="24"
+      width="full"
+      height="full"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >

@@ -1,7 +1,9 @@
-import { createBrowserRouter } from "react-router-dom";
-import { Auth } from "../modules/auth";
-import { Home } from "../modules/home";
-import { AuthProvider } from "../providers/AuthProvider";
+import { createBrowserRouter } from 'react-router-dom';
+import { Auth } from '../modules/auth';
+import { Home } from '../modules/home';
+import { AuthProvider } from '../providers/AuthProvider';
+import { Favorites } from '../modules/favorites';
+import { ProtectedRouter } from '../components';
 /* import { ProtectedRouter } from "../components/ProtectedRouter";  PARA ROTAS PROTEGIDAS*/
 
 export const routers = createBrowserRouter([
@@ -9,12 +11,21 @@ export const routers = createBrowserRouter([
     element: <AuthProvider />,
     children: [
       {
-        path: "/auth",
+        path: '/auth',
         element: <Auth />,
       },
       {
-        path: "/home",
+        path: '/home',
         element: <Home />,
+      },
+
+      {
+        path: '/favoritos',
+        element: (
+          <ProtectedRouter>
+            <Favorites />
+          </ProtectedRouter>
+        ),
       },
     ],
   },

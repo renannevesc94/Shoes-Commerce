@@ -1,46 +1,34 @@
-import {
-  MenuCarousel,
-  Header,
-  Footer,
-  ProductCard,
-  FallbackProductCard,
-} from "../../components";
-import { ProductProvider } from "../../providers/ProductsProvider";
+import { MenuCarousel, Header, Footer, ProductCard, FallbackProductCard } from '../../components';
+import { CurrentProductProvider } from '../../providers/CurrentProduct';
+import { useProducts } from '../../providers/ProductsProvider';
+
 import {
   FallbackHighlightBanner,
   HighlightBanner,
   MakersCarousel,
   NewsletterForm,
-} from "./components/index";
+} from './components/index';
 
-import { useGetHighLights } from "./hooks/use-getHighLights";
-import { useGetNovelties } from "./hooks/use-getNovelties";
-import { useGetReleases } from "./hooks/use-getReleases";
 export const Home = () => {
-  const { data: releases } = useGetReleases();
-  const { data: novelties } = useGetNovelties();
-  const { data: highlightBanners } = useGetHighLights();
+  const { releases, novelties, highlightBanners } = useProducts();
+
   const makers = [
-    { name: "adidas" },
-    { name: "asics" },
-    { name: "converse" },
-    { name: "nike" },
-    { name: "under" },
+    { name: 'adidas' },
+    { name: 'asics' },
+    { name: 'converse' },
+    { name: 'nike' },
+    { name: 'under' },
   ];
 
-  function isHighlightColor(
-    color: string
-  ): color is "default" | "primary" | "secondary" {
-    return ["default", "primary", "secondary"].includes(color);
+  function isHighlightColor(color: string): color is 'default' | 'primary' | 'secondary' {
+    return ['default', 'primary', 'secondary'].includes(color);
   }
 
   const banners = highlightBanners?.map((el) => {
     return (
       <HighlightBanner
         content={el}
-        backgroundColor={
-          isHighlightColor(el.backgroundColor) ? el.backgroundColor : "default"
-        }
+        backgroundColor={isHighlightColor(el.backgroundColor) ? el.backgroundColor : 'default'}
       />
     );
   });
@@ -62,9 +50,7 @@ export const Home = () => {
         </section>
 
         <section className="flex items-center justify-center w-full mt-6 flex-wrap">
-          <h2 className="w-full font-extrabold text-center text-xl">
-            Novidades
-          </h2>
+          <h2 className="w-full font-extrabold text-center text-xl">Novidades</h2>
           <MenuCarousel
             navigation={true}
             slidesPerView={2}
@@ -72,14 +58,14 @@ export const Home = () => {
               releases
                 ? releases.map((el) => {
                     return (
-                      <ProductProvider product={el}>
+                      <CurrentProductProvider product={el}>
                         <ProductCard
                           price={el.price}
                           rating={el.rating}
                           title={el.title}
                           urlImage={el.urlImage}
                         />
-                      </ProductProvider>
+                      </CurrentProductProvider>
                     );
                   })
                 : [<FallbackProductCard />, <FallbackProductCard />]
@@ -88,9 +74,7 @@ export const Home = () => {
         </section>
 
         <section className="flex items-center justify-center w-full mt-6 flex-wrap">
-          <h2 className="w-full font-extrabold text-center text-xl">
-            Lançamentos
-          </h2>
+          <h2 className="w-full font-extrabold text-center text-xl">Lançamentos</h2>
           <MenuCarousel
             navigation={true}
             slidesPerView={2}
@@ -98,14 +82,14 @@ export const Home = () => {
               novelties
                 ? novelties.map((el) => {
                     return (
-                      <ProductProvider product={el}>
+                      <CurrentProductProvider product={el}>
                         <ProductCard
                           price={el.price}
                           rating={el.rating}
                           title={el.title}
                           urlImage={el.urlImage}
                         />
-                      </ProductProvider>
+                      </CurrentProductProvider>
                     );
                   })
                 : [<FallbackProductCard />, <FallbackProductCard />]
@@ -114,9 +98,7 @@ export const Home = () => {
         </section>
 
         <section className=" mt-4">
-          <h2 className="text-center font-medium text-lg">
-            Trabalhamos com as melhores marcas
-          </h2>
+          <h2 className="text-center font-medium text-lg">Trabalhamos com as melhores marcas</h2>
           <MenuCarousel
             pagination={true}
             navigation={false}
