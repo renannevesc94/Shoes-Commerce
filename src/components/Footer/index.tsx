@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="h-1/6 mt-4 w-screen bg-slate-800 flex items-center justify-center flex-col">
+    <footer className="h-1/6 mt-4 w-screen p-1 bg-slate-800 flex items-center justify-center flex-col">
       <h2 className="text-sm font-medium text-whiteDefault">Formas de Pagamento</h2>
       <div className="bg-white h-10 w-full flex justify-center rounded-lg">
         <img src="./payment-credit-card.png" alt="" className="object-contain" />

@@ -59,12 +59,14 @@ export const Home = () => {
                 ? releases.map((el) => {
                     return (
                       <CurrentProductProvider product={el}>
-                        <ProductCard
-                          price={el.price}
-                          rating={el.rating}
-                          title={el.title}
-                          urlImage={el.urlImage}
-                        />
+                        <div className="w-full flex items-center justify-center">
+                          <ProductCard
+                            price={el.price}
+                            rating={el.rating}
+                            title={el.title}
+                            urlImage={el.urlImage}
+                          />
+                        </div>
                       </CurrentProductProvider>
                     );
                   })
@@ -83,12 +85,14 @@ export const Home = () => {
                 ? novelties.map((el) => {
                     return (
                       <CurrentProductProvider product={el}>
-                        <ProductCard
-                          price={el.price}
-                          rating={el.rating}
-                          title={el.title}
-                          urlImage={el.urlImage}
-                        />
+                        <div className="w-full flex items-center justify-center">
+                          <ProductCard
+                            price={el.price}
+                            rating={el.rating}
+                            title={el.title}
+                            urlImage={el.urlImage}
+                          />
+                        </div>
                       </CurrentProductProvider>
                     );
                   })
