@@ -8,4 +8,5 @@ export type productType = {
   price: string;
   rating: number;
   urlImage: string;
+  availableNumbers: [];
 };

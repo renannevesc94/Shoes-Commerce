@@ -1,14 +1,8 @@
 import { useLocation } from 'react-router-dom';
 import { ButtonAddToCart, ButtonFavorite, RatingStar, SelectNumber } from '../index';
+import { productType } from '../../types';
 
-type ProductCardProps = {
-  price: string;
-  title: string;
-  rating: number;
-  urlImage: string;
-};
-
-export const ProductCard = ({ price, title, rating, urlImage }: ProductCardProps) => {
+export const ProductCard = ({ price, title, rating, urlImage }: productType) => {
   const location = useLocation();
   return (
     <div className="border-2 shadow-md w-52 h-68 flex flex-col items-center p-1 rounded-lg">

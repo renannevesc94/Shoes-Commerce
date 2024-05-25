@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Novidades!",
+    "message": "Confira nossa última coleção!",
+    "backgroundColor": "primary"
+  },
+  {
+    "title": "Promoção!",
+    "message": "Descontos imperdíveis em calçados!",
+    "backgroundColor": "secondary"
+  },
+  {
+    "title": "Estilo em alta!",
+    "message": "Descubra os modelos mais modernos!",
+    "backgroundColor": "default"
+  }
+]

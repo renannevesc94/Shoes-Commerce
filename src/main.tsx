@@ -8,6 +8,7 @@ import { routers } from './routes';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { FavoritesProvider } from './providers/FavoritesProvider';
 import { ProductsProvider } from './providers/ProductsProvider';
+import { ShoppingCartProvider } from './providers/ShoppingCartProvider';
 
 const queryClient = new QueryClient();
 
@@ -24,9 +25,11 @@ enableMocking().then(() =>
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
         <ProductsProvider>
-          <FavoritesProvider>
-            <RouterProvider router={routers} />
-          </FavoritesProvider>
+          <ShoppingCartProvider>
+            <FavoritesProvider>
+              <RouterProvider router={routers} />
+            </FavoritesProvider>
+          </ShoppingCartProvider>
         </ProductsProvider>
       </QueryClientProvider>
     </React.StrictMode>

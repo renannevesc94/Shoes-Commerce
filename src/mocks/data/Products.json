@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "title": "Tênis Marca X",
+    "price": "255,50",
+    "rating": 3,
+    "urlImage": "tenis-card.png",
+    "availableNumbers": [36, 37, 40, 42],
+    "category": "novelties"
+  },
+  {
+    "id": "2",
+    "title": "Tênis da Adidas",
+    "price": "320,00",
+    "rating": 4,
+    "urlImage": "tenis-card2.png",
+    "availableNumbers": [35, 36, 37, 40, 42, 44],
+    "category": "releases"
+  },
+  {
+    "id": "3",
+    "title": "Tênis da Puma",
+    "price": "700,50",
+    "rating": 2,
+    "urlImage": "tenis-card3.png",
+    "availableNumbers": [35, 36, 40, 42, 44],
+    "category": "novelties"
+  },
+  {
+    "id": "4",
+    "title": "Tênis da New Balance",
+    "price": "125,50",
+    "rating": 5,
+    "urlImage": "tenis-card4.png",
+    "availableNumbers": [35, 37, 40, 42, 44],
+    "category": "releases"
+  },
+  {
+    "id": "5",
+    "title": "Tênis da Nike",
+    "price": "500,00",
+    "rating": 5,
+    "urlImage": "tenis-card5.png",
+    "availableNumbers": [35, 37, 40, 42, 44],
+    "category": "novelties"
+  },
+  {
+    "id": "6",
+    "title": "Tênis da Adidas",
+    "price": "399,20",
+    "rating": 4,
+    "urlImage": "tenis-card6.png",
+    "availableNumbers": [35, 36, 40, 42, 44],
+    "category": "releases"
+  },
+  {
+    "id": "7",
+    "title": "Tênis da Puma",
+    "price": "778,99",
+    "rating": 4,
+    "urlImage": "tenis-card7.png",
+    "availableNumbers": [35, 36, 40, 44],
+    "category": "novelties"
+  },
+  {
+    "id": "8",
+    "title": "Tênis da New Balance",
+    "price": "1199,00",
+    "rating": 3,
+    "urlImage": "tenis-card8.png",
+    "availableNumbers": [35, 36, 42, 44],
+    "category": "releases"
+  }
+]
