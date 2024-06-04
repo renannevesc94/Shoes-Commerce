@@ -1,6 +1,6 @@
-import { GoogleIcon, InstagramIcon } from "../../components/Icons";
+import { GoogleIcon, InstagramIcon } from '../../components/Icons';
 
-import { FormLogin } from "./components/FormLogin";
+import { FormLogin } from './components/FormLogin';
 
 export const Auth = () => {
   return (

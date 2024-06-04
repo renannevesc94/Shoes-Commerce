@@ -12,6 +12,5 @@ export const handlers = [
     await delay(1200);
     const releases = products.filter((el) => el.category === 'releases');
     return HttpResponse.json(releases);
-    return HttpResponse.json();
   }),
 ];

@@ -1,3 +1,4 @@
+import { ToastContainer } from 'react-toastify';
 import { Footer, Header, MenuCarousel, ProductCard } from '../../components';
 import { CurrentProductProvider } from '../../providers/CurrentProduct';
 import { useFavorites } from '../../providers/FavoritesProvider';
@@ -24,6 +25,8 @@ export const Favorites = () => {
                   <CurrentProductProvider product={el}>
                     <div className="w-full flex items-center justify-center">
                       <ProductCard
+                        id={el.id}
+                        availableNumbers={el.availableNumbers}
                         price={el.price}
                         rating={el.rating}
                         title={el.title}
@@ -37,6 +40,7 @@ export const Favorites = () => {
             />
           </div>
         </section>
+        <ToastContainer />
       </main>
       <Footer />
     </div>

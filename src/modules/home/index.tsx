@@ -59,8 +59,11 @@ export const Home = () => {
                 ? releases.map((el) => {
                     return (
                       <CurrentProductProvider product={el}>
-                        <div className="w-full flex items-center justify-center">
+                        <div className="p-1 flex items-center justify-center">
                           <ProductCard
+                            id={el.id}
+                            key={el.id}
+                            availableNumbers={el.availableNumbers}
                             price={el.price}
                             rating={el.rating}
                             title={el.title}
@@ -85,8 +88,11 @@ export const Home = () => {
                 ? novelties.map((el) => {
                     return (
                       <CurrentProductProvider product={el}>
-                        <div className="w-full flex items-center justify-center">
+                        <div className="p-1 flex items-center justify-center">
                           <ProductCard
+                            id={el.id}
+                            key={el.id}
+                            availableNumbers={el.availableNumbers}
                             price={el.price}
                             rating={el.rating}
                             title={el.title}

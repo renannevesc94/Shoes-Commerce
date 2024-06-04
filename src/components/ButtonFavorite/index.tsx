@@ -13,7 +13,7 @@ export const ButtonFavorite = () => {
 
   return (
     <button
-      className="w-7  bg-slate-300 rounded-full p-[2px] "
+      className="w-7  bg-slate-200 rounded-full p-[2px] "
       onClick={() => {
         !isAuthenticated ? logout() : setFavorite(product);
       }}

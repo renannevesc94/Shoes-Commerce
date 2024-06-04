@@ -11,7 +11,7 @@ export const RatingStar = ({ rating }: RatingStarProps) => {
         <IconStar
           key={index}
           strokeColor={index < rating ? '#ccc' : '#ccc'}
-          fillColor={index < rating ? '#FCC200' : 'none'}
+          fillColor={index < rating ? '#FCC200' : '#ccc'}
         />
       ))}
     </span>

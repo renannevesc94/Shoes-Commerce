@@ -36,9 +36,9 @@ Este é um projeto em desenvolvimento do front end de uma plataforma e-Commerce 
 
 <div>
 
-<img src="./exemples/Captura de tela de 2024-05-27 10-07-03.png" width="400">
-<img src="./exemples/Captura de tela de 2024-05-27 10-07-03.png" width="400">
-<img src="./exemples/Captura de tela de 2024-05-27 10-07-03.png">
+<img src="./exemples/login.png" width="400">
+<img src="./exemples/home.png" width="400">
+<img src="./exemples/favorite.png">
 </div>
 
 ### Rodando o projeto

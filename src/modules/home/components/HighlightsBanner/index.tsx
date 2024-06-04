@@ -1,6 +1,6 @@
 type HighlightBannerProps = {
   content: { title: string; message: string };
-  backgroundColor: "default" | "primary" | "secondary";
+  backgroundColor: 'default' | 'primary' | 'secondary';
 };
 
 export const HighlightBanner = ({ content, backgroundColor }: HighlightBannerProps) => {
@@ -8,14 +8,14 @@ export const HighlightBanner = ({ content, backgroundColor }: HighlightBannerPro
 
   const getBackgroundColor = () => {
     switch (backgroundColor) {
-      case "primary":
-        return "bg-gradient-to-br from-sky-800 to-violet-800";
+      case 'primary':
+        return 'bg-gradient-to-br from-sky-800 to-violet-800';
 
-      case "secondary":
-        return "bg-gradient-to-br from-sky-800 to-cyan-500";
+      case 'secondary':
+        return 'bg-gradient-to-br from-sky-800 to-cyan-500';
 
       default:
-        return "bg-gradient-to-br from-rose-900 to-red-500";
+        return 'bg-gradient-to-br from-rose-900 to-red-500';
     }
   };
 
